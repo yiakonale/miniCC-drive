@@ -1,0 +1,219 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:R R1
+U 1 1 63576D96
+P 4500 2000
+F 0 "R1" H 4570 2046 50  0000 L CNN
+F 1 "0.15R" H 4570 1955 50  0000 L CNN
+F 2 "Resistor_SMD:R_2512_6332Metric" V 4430 2000 50  0001 C CNN
+F 3 "~" H 4500 2000 50  0001 C CNN
+	1    4500 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:L L1
+U 1 1 635777FD
+P 3750 1700
+F 0 "L1" V 3940 1700 50  0000 C CNN
+F 1 "4.7uH" V 3849 1700 50  0000 C CNN
+F 2 "Inductor_SMD:L_1008_2520Metric" H 3750 1700 50  0001 C CNN
+F 3 "~" H 3750 1700 50  0001 C CNN
+	1    3750 1700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 63578755
+P 1350 1800
+F 0 "C1" H 1465 1846 50  0000 L CNN
+F 1 "10uF" H 1465 1755 50  0000 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric" H 1388 1650 50  0001 C CNN
+F 3 "~" H 1350 1800 50  0001 C CNN
+	1    1350 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C2
+U 1 1 63579843
+P 4100 1950
+F 0 "C2" H 4215 1996 50  0000 L CNN
+F 1 "10uF" H 4215 1905 50  0000 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric" H 4138 1800 50  0001 C CNN
+F 3 "~" H 4100 1950 50  0001 C CNN
+	1    4100 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L mini_cc_drive-rescue:PAM2804-Converter_DCDC U1
+U 1 1 63587DF6
+P 2850 1450
+F 0 "U1" H 2850 1475 50  0000 C CNN
+F 1 "PAM2804" H 2850 1384 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:TSOT-23-5_HandSoldering" H 2850 1450 50  0001 C CNN
+F 3 "" H 2850 1450 50  0001 C CNN
+	1    2850 1450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3250 1700 3600 1700
+Wire Wire Line
+	3250 1900 3400 1900
+$Comp
+L power:Earth #PWR0101
+U 1 1 6358B0E8
+P 4500 2300
+F 0 "#PWR0101" H 4500 2050 50  0001 C CNN
+F 1 "Earth" H 4500 2150 50  0001 C CNN
+F 2 "" H 4500 2300 50  0001 C CNN
+F 3 "~" H 4500 2300 50  0001 C CNN
+	1    4500 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:Earth #PWR0102
+U 1 1 6358C71B
+P 1350 1950
+F 0 "#PWR0102" H 1350 1700 50  0001 C CNN
+F 1 "Earth" H 1350 1800 50  0001 C CNN
+F 2 "" H 1350 1950 50  0001 C CNN
+F 3 "~" H 1350 1950 50  0001 C CNN
+	1    1350 1950
+	1    0    0    -1  
+$EndComp
+Text Label 4250 1700 0    50   ~ 0
+ANODE
+Text Label 3400 1900 0    50   ~ 0
+CATHODE
+Text Label 2300 1650 0    50   ~ 0
+Vin
+Text Label 2300 1800 0    50   ~ 0
+GND
+Text Label 3300 1700 0    50   ~ 0
+SW
+$Comp
+L Device:R R2
+U 1 1 64EAB943
+P 1850 1800
+F 0 "R2" H 1780 1754 50  0000 R CNN
+F 1 "10k" H 1780 1845 50  0000 R CNN
+F 2 "Resistor_SMD:R_1206_3216Metric" V 1780 1800 50  0001 C CNN
+F 3 "~" H 1850 1800 50  0001 C CNN
+	1    1850 1800
+	-1   0    0    1   
+$EndComp
+Text Label 2300 1950 0    50   ~ 0
+PWM
+Wire Wire Line
+	2200 1800 2450 1800
+$Comp
+L power:Earth #PWR01
+U 1 1 64EB2C90
+P 2200 1800
+F 0 "#PWR01" H 2200 1550 50  0001 C CNN
+F 1 "Earth" H 2200 1650 50  0001 C CNN
+F 2 "" H 2200 1800 50  0001 C CNN
+F 3 "~" H 2200 1800 50  0001 C CNN
+	1    2200 1800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1350 1650 1850 1650
+Connection ~ 1850 1650
+Wire Wire Line
+	1850 1650 2450 1650
+Wire Wire Line
+	1850 1950 2450 1950
+$Comp
+L Connector:Conn_01x01_Male J4
+U 1 1 64ECE9BB
+P 4700 1700
+F 0 "J4" H 4700 1650 50  0000 C CNN
+F 1 "Conn_01x01_Male" H 4808 1790 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 4700 1700 50  0001 C CNN
+F 3 "~" H 4700 1700 50  0001 C CNN
+	1    4700 1700
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x01_Male J3
+U 1 1 64ECF6B3
+P 4700 1850
+F 0 "J3" H 4672 1828 50  0000 R CNN
+F 1 "Conn_01x01_Male" H 4672 1783 50  0001 R CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 4700 1850 50  0001 C CNN
+F 3 "~" H 4700 1850 50  0001 C CNN
+	1    4700 1850
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Male J1
+U 1 1 64ECFE05
+P 1050 1650
+F 0 "J1" H 1158 1739 50  0000 C CNN
+F 1 "Conn_01x01_Male" H 1158 1740 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 1050 1650 50  0001 C CNN
+F 3 "~" H 1050 1650 50  0001 C CNN
+	1    1050 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Male J2
+U 1 1 64ED026E
+P 1050 1950
+F 0 "J2" H 1158 2039 50  0000 C CNN
+F 1 "Conn_01x01_Male" H 1158 2040 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 1050 1950 50  0001 C CNN
+F 3 "~" H 1050 1950 50  0001 C CNN
+	1    1050 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1250 1950 1350 1950
+Connection ~ 1350 1950
+Wire Wire Line
+	1250 1650 1350 1650
+Connection ~ 1350 1650
+$Comp
+L Connector:Conn_01x01_Male J5
+U 1 1 64ED4AE5
+P 1650 1950
+F 0 "J5" H 1758 2039 50  0000 C CNN
+F 1 "Conn_01x01_Male" H 1758 2040 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x01_P2.54mm_Vertical" H 1650 1950 50  0001 C CNN
+F 3 "~" H 1650 1950 50  0001 C CNN
+	1    1650 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4100 1700 4100 1800
+Wire Wire Line
+	3900 1700 4100 1700
+Wire Wire Line
+	4100 1700 4500 1700
+Connection ~ 4100 1700
+Wire Wire Line
+	4500 2300 4500 2250
+Text Label 4500 1850 2    50   ~ 0
+CATHODE
+Wire Wire Line
+	4100 2100 4100 2250
+Wire Wire Line
+	4100 2250 4500 2250
+Connection ~ 4500 2250
+Wire Wire Line
+	4500 2250 4500 2150
+$EndSCHEMATC

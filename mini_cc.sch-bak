@@ -1,0 +1,169 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:R R1
+U 1 1 63576D96
+P 3400 2050
+F 0 "R1" H 3470 2096 50  0000 L CNN
+F 1 "0.15R" H 3470 2005 50  0000 L CNN
+F 2 "Resistor_SMD:R_2512_6332Metric" V 3330 2050 50  0001 C CNN
+F 3 "~" H 3400 2050 50  0001 C CNN
+	1    3400 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:L L1
+U 1 1 635777FD
+P 3750 1700
+F 0 "L1" V 3940 1700 50  0000 C CNN
+F 1 "4.7uH" V 3849 1700 50  0000 C CNN
+F 2 "Inductor_SMD:L_1008_2520Metric" H 3750 1700 50  0001 C CNN
+F 3 "~" H 3750 1700 50  0001 C CNN
+	1    3750 1700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 63578755
+P 1850 1650
+F 0 "C1" H 1965 1696 50  0000 L CNN
+F 1 "10uF" H 1965 1605 50  0000 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric" H 1888 1500 50  0001 C CNN
+F 3 "~" H 1850 1650 50  0001 C CNN
+	1    1850 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C2
+U 1 1 63579843
+P 4000 2050
+F 0 "C2" H 4115 2096 50  0000 L CNN
+F 1 "10uF" H 4115 2005 50  0000 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric" H 4038 1900 50  0001 C CNN
+F 3 "~" H 4000 2050 50  0001 C CNN
+	1    4000 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Converter_DCDC:PAM2804 U1
+U 1 1 63587DF6
+P 2850 1450
+F 0 "U1" H 2850 1475 50  0000 C CNN
+F 1 "PAM2804" H 2850 1384 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:TSOT-23-5_HandSoldering" H 2850 1450 50  0001 C CNN
+F 3 "" H 2850 1450 50  0001 C CNN
+	1    2850 1450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1850 1500 2450 1500
+Wire Wire Line
+	3250 1700 3600 1700
+Wire Wire Line
+	3250 1900 3400 1900
+Wire Wire Line
+	3400 2200 4000 2200
+Wire Wire Line
+	3900 1700 4000 1700
+Wire Wire Line
+	4000 1700 4000 1900
+$Comp
+L power:Earth #PWR0101
+U 1 1 6358B0E8
+P 4000 2200
+F 0 "#PWR0101" H 4000 1950 50  0001 C CNN
+F 1 "Earth" H 4000 2050 50  0001 C CNN
+F 2 "" H 4000 2200 50  0001 C CNN
+F 3 "~" H 4000 2200 50  0001 C CNN
+	1    4000 2200
+	1    0    0    -1  
+$EndComp
+Connection ~ 4000 2200
+Wire Wire Line
+	2450 1800 1850 1800
+Wire Wire Line
+	2450 1500 2450 1650
+$Comp
+L power:Earth #PWR0102
+U 1 1 6358C71B
+P 1850 1800
+F 0 "#PWR0102" H 1850 1550 50  0001 C CNN
+F 1 "Earth" H 1850 1650 50  0001 C CNN
+F 2 "" H 1850 1800 50  0001 C CNN
+F 3 "~" H 1850 1800 50  0001 C CNN
+	1    1850 1800
+	1    0    0    -1  
+$EndComp
+Connection ~ 1850 1800
+Text Label 2150 1950 0    50   ~ 0
+PWM
+Wire Wire Line
+	2450 1950 2150 1950
+Text Label 3800 1900 0    50   ~ 0
+ANODE
+Text Label 3650 1900 2    50   ~ 0
+CATHODE
+Wire Wire Line
+	3400 1900 3600 1900
+Connection ~ 3400 1900
+Wire Wire Line
+	3800 1900 4000 1900
+Connection ~ 4000 1900
+$Comp
+L Mechanical:MountingHole_Pad H2
+U 1 1 6359805C
+P 3000 2850
+F 0 "H2" H 2900 2807 50  0000 R CNN
+F 1 "MountingHole_Pad" H 2900 2898 50  0000 R CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 3000 2850 50  0001 C CNN
+F 3 "~" H 3000 2850 50  0001 C CNN
+	1    3000 2850
+	-1   0    0    1   
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H3
+U 1 1 635982E7
+P 4000 2850
+F 0 "H3" H 3900 2807 50  0000 R CNN
+F 1 "MountingHole_Pad" H 3900 2898 50  0000 R CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 4000 2850 50  0001 C CNN
+F 3 "~" H 4000 2850 50  0001 C CNN
+	1    4000 2850
+	-1   0    0    1   
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H4
+U 1 1 6359856D
+P 4000 2550
+F 0 "H4" H 3900 2507 50  0000 R CNN
+F 1 "MountingHole_Pad" H 3900 2598 50  0000 R CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 4000 2550 50  0001 C CNN
+F 3 "~" H 4000 2550 50  0001 C CNN
+	1    4000 2550
+	-1   0    0    1   
+$EndComp
+$Comp
+L Mechanical:MountingHole_Pad H1
+U 1 1 63597334
+P 3000 2550
+F 0 "H1" H 2900 2507 50  0000 R CNN
+F 1 "MountingHole_Pad" H 2900 2598 50  0000 R CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3" H 3000 2550 50  0001 C CNN
+F 3 "~" H 3000 2550 50  0001 C CNN
+	1    3000 2550
+	-1   0    0    1   
+$EndComp
+$EndSCHEMATC
